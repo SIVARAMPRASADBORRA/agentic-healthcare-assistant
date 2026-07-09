@@ -1,0 +1,64 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# MediAgent .gitignore
+# CRITICAL: Secrets and patient data must never enter version control
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── Secrets (NEVER commit) ────────────────────────────────────────────────────
+.env
+*.env
+.env.*
+!.env.example          # template is safe to commit
+
+# ── Patient Data and PII (HIPAA / DISHA compliance) ──────────────────────────
+records.xlsx           # patient database
+appointments.xlsx      # appointment log
+eval_log.csv           # evaluation results
+*.pdf                  # patient PDF reports
+sample_report_*.pdf    # demo patient reports
+
+# ── Vector Indexes (rebuilt from PDFs on first run) ───────────────────────────
+vector_store/
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-log.txt
+
+# ── Virtual environments ──────────────────────────────────────────────────────
+venv/
+env/
+ENV/
+.venv/
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── Production runtime artefacts ──────────────────────────────────────────────
+*.log
+logs/
+celerybeat-schedule
+celerybeat.pid
+chroma_db/
+*.sqlite3
+*.db
+
+# ── Testing ───────────────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# ── OS / IDE ──────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
