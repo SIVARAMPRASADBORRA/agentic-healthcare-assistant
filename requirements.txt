@@ -1,0 +1,32 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# MediAgent — MVP / Development Dependencies
+# Python 3.10+ required
+# Install: pip install -r requirements.txt
+#
+# For production deployment, see requirements-prod.txt
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── LLM & Agent Framework ─────────────────────────────────────────────────────
+langchain-openai>=0.2.0
+langchain-community>=0.3.0
+langchain-core>=0.3.0
+langchain-text-splitters>=0.3.0
+langgraph>=0.2.0
+
+# ── Vector Store & RAG ────────────────────────────────────────────────────────
+faiss-cpu
+pypdf
+
+# ── Data Layer (MVP: Excel-backed) ────────────────────────────────────────────
+pandas
+openpyxl
+xmltodict              # required by PubmedQueryRun for NCBI XML parsing
+
+# ── Configuration & Secrets ───────────────────────────────────────────────────
+python-dotenv>=1.0.0
+
+# ── UI ────────────────────────────────────────────────────────────────────────
+streamlit>=1.40.0
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+requests
